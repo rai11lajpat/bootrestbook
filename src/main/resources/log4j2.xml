@@ -1,0 +1,35 @@
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+		</Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+		<!-- Main File Appender -->
+		<RollingFile name="FileAppender" fileName="logs/testapi.log" filePattern="test/smsapi-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>
+					${LOG_PATTERN}
+				</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="5000" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.api.book.bootrestbook" level="info" additivity="true">
+			<appender-ref ref="FileAppender" level="info" />
+		</Logger>
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+			
+			
+		</Root>
+	</Loggers>
+</Configuration>

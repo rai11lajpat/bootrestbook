@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %level %-50c - %msg %n" />
+		</Console>
+
+		<!-- Main File Appender -->
+		<File name="file" fileName="testapi.log">
+			<PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %level %-50c - %msg %n" />
+			
+			<!-- <Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="5000" /> -->
+		</File>
+	
+
+	</Appenders>
+
+	<Loggers>
+		<!-- <Logger
+			name="com.api.book.bookrestbook"
+			level="info" additivity="true">
+			<appender-ref ref="FileAppender" level="info" />
+			<appender-ref ref="file"/>
+		</Logger>
+		 -->
+
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="file"/>
+		</Root>
+	</Loggers>
+</Configuration>
