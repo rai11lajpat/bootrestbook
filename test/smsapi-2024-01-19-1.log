@@ -1,0 +1,2 @@
+2024-01-19 20:28:32.042  INFO Lajpat-Rai --- [  restartedMain] c.a.b.b.BootrestbookApplication          : Starting BootrestbookApplication using Java 18.0.2 with PID 14436 (E:\data\projects\vs springBoot\bootrestbook\target\classes started by PMYLS in E:\data\projects\vs springBoot\bootrestbook)
+2024-01-19 20:28:32.055  INFO Lajpat-Rai --- [  restartedMain] c.a.b.b.BootrestbookApplication          : No active profile set, falling back to 1 default profile: "default"

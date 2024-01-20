@@ -6,6 +6,7 @@ import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 // import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ import com.api.book.bootrestbook.services.BookService;
 
 //@Controller
 @RestController
-// @CrossOrigin(origins="*")
+@CrossOrigin(origins="*")
 public class BookControlers {
 
     private final static Logger log=Logger.getLogger(BookControlers.class);
